@@ -124,7 +124,7 @@ open class JSONEncoder {
     /// - returns: A new `Data` value containing the encoded JSON data.
     /// - throws: `EncodingError.invalidValue` if a non-comforming floating-point value is encountered during encoding, and the encoding strategy is `.throw`.
     /// - throws: An error if any value throws an error during encoding.
-    open func encode<T : Encodable>(_ value: T) throws -> Data {
+    open func encode(_ value: Encodable) throws -> Data {
         let encoder = _JSONEncoder(options: self.options)
         try value.encode(to: encoder)
 
